@@ -31,8 +31,8 @@ function onFormSubmit(event){
     }
     console.log(data);
 
-    localStorage.clear();
-    //     localStorage.removeItem('feedback-form-state');
+    // localStorage.clear();
+    localStorage.removeItem('feedback-form-state');
     event.currentTarget.reset();
 }
 
