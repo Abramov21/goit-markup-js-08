@@ -9,7 +9,7 @@ const form = document.querySelector('.feedback-form');
 
 form.addEventListener('input', throttle(onFormInput, 500));
 form.addEventListener('submit', onFormSubmit)
-
+fillFormData();
 
 function onFormInput(event) {
     const data = {
@@ -24,10 +24,9 @@ function onFormInput(event) {
 function onFormSubmit(event){
     event.preventDefault();
 
-
     let data ={
         email: form.email.value,
-        coment: form.message.value,
+        message: form.message.value,
     }
     console.log(data);
 
@@ -40,6 +39,6 @@ function fillFormData() {
     const saveData = JSON.parse(localStorage.getItem('feedback-form-state'));
     if (saveData) {
         form.email.value = saveData.email;
-        form.coment.value = saveData.message;
+        form.message.value = saveData.message;
     }
 }
